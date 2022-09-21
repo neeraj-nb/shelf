@@ -8,17 +8,21 @@
 
         <div class="container p-5">
             <div class="row " >
+                <% if (bookarray.length == 0){ %> 
+                    <p>no books yet</p>
+              <%  }else{ %> 
+               <% bookarray.forEach(book => { %>
     
     
                 <div class="card m-3" style="width: 18rem;">
-                    <img src="<%= data.img %> " class="card-img-top" alt="<%= data.alt %> ">
+                    <img src="<%= book.image %> " class="card-img-top" alt="<%= book.alttext %> ">
                     <div class="card-body">
-                        <a href="#" class="stretched-link "><h5 class="card-title"><%= data.name %> </h5></a>
-                        <p class="card-text"><%= data.author %> </p>
+                        <a href="./book/<%= book._id%>" class="stretched-link "><h5 class="card-title"><%= book.name %> </h5></a>
+                        <p class="card-text"><%= book.author %> </p>
                     </div>
                 </div>
     
-               
+                <% })}; %>
     
             </div>
         </div>
